@@ -21,13 +21,13 @@ Alternatively, you can install it manually by cloning this repository to your Su
 Usage
 -----
 
-You can format your Blade templates by using the `Format: Blade` command. Here's how to do it:
+You can format your Blade templates by using the `Format: Blade File` command. Here's how to do it:
 
 1.  Open a Blade template file
-2.  Press `Ctrl+Shift+P` on Windows or `Cmd+Shift+P` on Mac to open the command palette
-3.  Type `Blade Formatter` and press `Enter`
+2.  Press `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on Mac to open the command palette
+3.  Type `Format: Blade File` and press `Enter`
 
-Alternatively, you can use the keyboard shortcut `Ctrl+Alt+B` on Windows or `Cmd+Alt+B` on Mac to format the current file.
+Alternatively, you can use the keyboard shortcut `Ctrl+Alt+F` on Windows/Linux or `Cmd+Alt+F` on Mac to format the current file.
 
 Configuration
 -------------

@@ -1,0 +1,31 @@
+[
+    {
+        "id": "preferences",
+        "menu": [
+            {
+                "id": "package_settings",
+                "menu": [
+                    {
+                        "caption": "BladeFormatter",
+                        "menu": [
+                            {
+                                "caption": "Settings – Default",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/BladeFormatter/BladeFormatter.sublime-settings"
+                                }
+                            },
+                            {
+                                "caption": "Settings – User",
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/BladeFormatter.sublime-settings"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -2,5 +2,13 @@
     {
         "caption": "Format: Blade File",
         "command": "blade_format"
+    },
+    {
+        "caption": "Preferences: BladeFormatter Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/BladeFormatter/BladeFormatter.sublime-settings",
+            "default": "{\n\t$0\n}\n"
+        }
     }
 ]
