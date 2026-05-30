@@ -1,11 +1,57 @@
 {
+  // Indentation size (default: 4)
   "indent_size": 4,
+
+  // How to wrap HTML attributes.
+  // Choices: "auto", "force", "force-aligned", "force-expand-multiline", "aligned-multiple", "preserve", "preserve-aligned"
   "wrap_attributes": "auto",
+
+  // The maximum line length before wrapping is triggered (default: 120)
   "wrap_line_length": 120,
+
+  // Minimum number of HTML tag attributes required to trigger forced attribute wrapping (default: 2)
+  "wrap_attributes_min_attrs": 2,
+
+  // If true, indents the <head> and <body> sections in HTML (default: false)
+  "indent_inner_html": false,
+
+  // If true, ends the formatted output with a newline character (default: true)
   "end_with_newline": true,
+
+  // End of line character(s). Choices: "LF", "CRLF"
   "end_of_line": "LF",
-  "sort_tailwindcss_classes": true,
+
+  // If true, uses tabs instead of spaces for indentation (default: false)
+  "use_tabs": false,
+
+  // If true, automatically sorts Tailwind CSS classes (default: false)
+  "sort_tailwindcss_classes": false,
+
+  // Path to your custom Tailwind CSS configuration file (e.g. "tailwind.config.js")
+  "tailwindcss_config_path": "",
+
+  // How to sort HTML attributes.
+  // Choices: "none", "alphabetical", "code-guide", "idiomatic", "vuejs"
   "sort_html_attributes": "none",
+
+  // If true, multiple empty blank lines will be merged into a single blank line (default: false)
   "no_multiple_empty_lines": false,
-  "no_php_syntax_check": false
+
+  // If true, disables the PHP syntax check (default: false)
+  "no_php_syntax_check": false,
+
+  // If true, uses double quotes instead of single quotes for PHP expressions (default: false)
+  "no_single_quote": false,
+
+  // If true, disables trailing commas in PHP expressions (default: false)
+  "no_trailing_comma_php": false,
+
+  // A list of tags that should be preceded by an extra newline in formatted output (default: ["head", "body", "/html"])
+  "extra_liners": ["head", "body", "/html"],
+
+  // Custom prefixes for component names (default: ["x-", "livewire:"])
+  "component_prefix": ["x-", "livewire:"],
+
+  // Set the PHP version for syntax compatibility (e.g. "8.0", "8.1", "8.2", "8.3", "8.4")
+  "php_version": ""
 }

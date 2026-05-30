@@ -1,6 +1,6 @@
 [
-  {
-    "caption": "Blade Formatter",
-    "command": "blade_formatter"
-  }
+    {
+        "caption": "Format: Blade File",
+        "command": "blade_format"
+    }
 ]

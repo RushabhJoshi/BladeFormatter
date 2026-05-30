@@ -1,6 +1,9 @@
 [
-  {
-    "keys": ["ctrl+shift+h"],
-    "command": "blade_formatter"
-  }
+    { 
+        "keys": ["ctrl+alt+f"], 
+        "command": "blade_format",
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.html.laravel-blade" }
+        ]
+    }
 ]
