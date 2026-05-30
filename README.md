@@ -32,31 +32,54 @@ Alternatively, you can use the keyboard shortcut `Ctrl+Alt+B` on Windows or `Cmd
 Configuration
 -------------
 
-Blade Formatter supports a few configuration options that you can modify in your Sublime Text's settings. To access the settings, open the command palette, type `Preferences: Settings` and press `Enter`. Then, add the following options to your settings file:
+Blade Formatter supports all configuration options available in the underlying `blade-formatter`. You can modify these in your BladeFormatter settings by opening the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on Mac), typing `Preferences: BladeFormatter Settings`, and pressing `Enter`.
+
+Here is the complete list of options with their default values:
 
 ```json
 {
   "indent_size": 4,
   "wrap_attributes": "auto",
   "wrap_line_length": 120,
+  "wrap_attributes_min_attrs": 2,
+  "indent_inner_html": false,
   "end_with_newline": true,
   "end_of_line": "LF",
-  "sort_tailwindcss_classes": true,
+  "use_tabs": false,
+  "sort_tailwindcss_classes": false,
+  "tailwindcss_config_path": "",
   "sort_html_attributes": "none",
   "no_multiple_empty_lines": false,
-  "no_php_syntax_check": false
+  "no_php_syntax_check": false,
+  "no_single_quote": false,
+  "no_trailing_comma_php": false,
+  "extra_liners": ["head", "body", "/html"],
+  "component_prefix": ["x-", "livewire:"],
+  "php_version": ""
 }
 ```
 
-Here's what each option does:
+### Option Descriptions
 
-*   `indent_size`: The number of spaces to use for indentation (default: 4)
-*   `wrap_attributes`: The maximum line length before wrapping long lines (default: 120)
-*   `wrap_line_length`: Whether to align variables in control structures (default: true)
-*   `blade_formatter_space_after_control_structures`: Whether to add a space after control structures (default: true)
-*   `blade_formatter_space_after_echos`: Whether to add a space after echos (default: false)
-*   `blade_formatter_space_between_arguments`: Whether to add a space between function arguments (default: true)
-*   `blade_formatter_trailing_commas`: Whether to add trailing commas to arrays and function calls (default: true)
+*   `indent_size`: The number of spaces to use for indentation (default: `4`).
+*   `wrap_attributes`: The strategy to wrap HTML attributes. Choices: `"auto"`, `"force"`, `"force-aligned"`, `"force-expand-multiline"`, `"aligned-multiple"`, `"preserve"`, `"preserve-aligned"` (default: `"auto"`).
+*   `wrap_line_length`: The maximum line length before wrapping is triggered (default: `120`).
+*   `wrap_attributes_min_attrs`: The minimum number of HTML tag attributes required to trigger forced attribute wrapping (default: `2`).
+*   `indent_inner_html`: Whether to indent the `<head>` and `<body>` sections in HTML (default: `false`).
+*   `end_with_newline`: Whether to end the formatted output with a newline character (default: `true`).
+*   `end_of_line`: The end of line character(s). Choices: `"LF"`, `"CRLF"` (default: `"LF"`).
+*   `use_tabs`: Whether to use tabs instead of spaces for indentation (default: `false`).
+*   `sort_tailwindcss_classes`: Whether to automatically sort Tailwind CSS classes (default: `false`).
+*   `tailwindcss_config_path`: Path to a custom Tailwind CSS configuration file (e.g. `"tailwind.config.js"`).
+*   `sort_html_attributes`: Strategy to sort HTML attributes. Choices: `"none"`, `"alphabetical"`, `"code-guide"`, `"idiomatic"`, `"vuejs"` (default: `"none"`).
+*   `no_multiple_empty_lines`: Whether to merge multiple consecutive empty lines into a single blank line (default: `false`).
+*   `no_php_syntax_check`: Whether to disable the PHP syntax check (default: `false`).
+*   `no_single_quote`: Whether to use double quotes instead of single quotes for PHP expressions (default: `false`).
+*   `no_trailing_comma_php`: Whether to disable trailing commas in PHP expressions (default: `false`).
+*   `extra_liners`: List of tags that should be preceded by an extra newline (default: `["head", "body", "/html"]`).
+*   `component_prefix`: List of custom prefixes for component names (default: `["x-", "livewire:"]`).
+*   `php_version`: The target PHP version for syntax compatibility, e.g., `"8.0"`, `"8.1"`, `"8.2"`, `"8.3"`, `"8.4"`.
+
 
 Credits
 -------

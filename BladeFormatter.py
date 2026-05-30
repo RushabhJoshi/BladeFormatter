@@ -1,4 +1,6 @@
+# pyrefly: ignore [missing-import]
 import sublime
+# pyrefly: ignore [missing-import]
 import sublime_plugin
 import subprocess
 import os
@@ -7,7 +9,8 @@ class BladeFormatCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         # 1. Quick sanity check: Is this actually a blade file?
         filename = self.view.file_name() or ""
-        if not filename.endswith(".blade.php") and "blade" not in self.view.settings().get('syntax').lower():
+        syntax = self.view.settings().get('syntax') or ""
+        if not filename.endswith(".blade.php") and "blade" not in syntax.lower():
             # Feel free to change this if you want it to run on any unsaved file
             sublime.status_message("Blade Formatter: Not a Blade file.")
             return
@@ -138,7 +141,7 @@ class BladeFormatCommand(sublime_plugin.TextCommand):
 
             # 5. Check if the external tool threw an error
             if process.returncode != 0:
-                print("Blade Formatter Error:\n", stderr)
+                print("[BladeFormatter] Blade Formatter Error:\n", stderr)
                 sublime.error_message("Blade Formatter Error! Check the Sublime console for details.")
                 return
 
@@ -152,4 +155,8 @@ class BladeFormatCommand(sublime_plugin.TextCommand):
             sublime.set_timeout(lambda: self.view.set_viewport_position(current_viewport, False), 50)
 
         except FileNotFoundError:
+            print("[BladeFormatter] Error: blade-formatter executable not found in PATH.")
             sublime.error_message("Could not find 'blade-formatter'. Make sure it is installed globally via npm (npm i -g blade-formatter).")
+        except Exception as e:
+            print("[BladeFormatter] Unexpected error: {}".format(str(e)))
+            sublime.error_message("Blade Formatter Unexpected Error: " + str(e))
