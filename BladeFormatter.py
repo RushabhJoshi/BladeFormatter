@@ -126,13 +126,20 @@ class BladeFormatCommand(sublime_plugin.TextCommand):
 
         is_windows = os.name == 'nt'
 
+        startupinfo = None
+        if is_windows:
+            startupinfo = subprocess.STARTUPINFO()
+            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = subprocess.SW_HIDE
+
         try:
             process = subprocess.Popen(
                 cmd,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                shell=is_windows
+                shell=is_windows,
+                startupinfo=startupinfo
             )
             
             stdout_bytes, stderr_bytes = process.communicate(input=unformatted_code.encode('utf-8'))

@@ -1,4 +1,3 @@
 # Exclude internal repository/git configuration files from the packaged zip
 .gitignore export-ignore
 .gitattributes export-ignore
-LICENSE export-ignore

@@ -7,19 +7,14 @@
                 "menu": [
                     {
                         "caption": "BladeFormatter",
+                        "id": "BladeFormatter",
                         "menu": [
                             {
-                                "caption": "Settings – Default",
-                                "command": "open_file",
+                                "caption": "Settings",
+                                "command": "edit_settings",
                                 "args": {
-                                    "file": "${packages}/BladeFormatter/BladeFormatter.sublime-settings"
-                                }
-                            },
-                            {
-                                "caption": "Settings – User",
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/BladeFormatter.sublime-settings"
+                                    "base_file": "${packages}/BladeFormatter/BladeFormatter.sublime-settings",
+                                    "default": "{\n\t$0\n}\n"
                                 }
                             }
                         ]
