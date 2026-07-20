@@ -27,7 +27,7 @@ You can format your Blade templates by using the `Format: Blade File` command. H
 2.  Press `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on Mac to open the command palette
 3.  Type `Format: Blade File` and press `Enter`
 
-Alternatively, you can use the keyboard shortcut `Ctrl+Alt+F` on Windows/Linux or `Cmd+Alt+F` on Mac to format the current file.
+Alternatively, you can use the keyboard shortcut `Shift+Alt+F` (`Shift+Option+F` on Mac) to format the current file.
 
 Configuration
 -------------

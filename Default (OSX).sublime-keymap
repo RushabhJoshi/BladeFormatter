@@ -1,6 +1,6 @@
 [
-    { 
-        "keys": ["cmd+alt+f"],
+    {
+        "keys": ["shift+alt+f"],
         "command": "blade_format"
     }
 ]
