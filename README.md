@@ -27,7 +27,25 @@ You can format your Blade templates by using the `Format: Blade File` command. H
 2.  Press `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on Mac to open the command palette
 3.  Type `Format: Blade File` and press `Enter`
 
-Alternatively, you can use the keyboard shortcut `Shift+Alt+F` (`Shift+Option+F` on Mac) to format the current file.
+### Keyboard Shortcut
+
+To avoid conflicts with other packages, Blade Formatter does not ship with a default keyboard shortcut. You can easily set up your own:
+
+1. Open **Preferences > Key Bindings** in Sublime Text.
+2. Add the following entry to your User key bindings (the file on the right side):
+
+```json
+[
+    {
+        "keys": ["shift+alt+f"],
+        "command": "blade_format",
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.html.blade" }
+        ]
+    }
+]
+```
+*(On Mac, you might prefer `"keys": ["super+shift+f"]` or `"keys": ["shift+option+f"]`)*
 
 Configuration
 -------------
