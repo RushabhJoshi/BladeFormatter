@@ -1,26 +1,31 @@
 [
-    {
-        "id": "preferences",
-        "menu": [
-            {
-                "id": "package_settings",
-                "menu": [
-                    {
-                        "caption": "BladeFormatter",
-                        "id": "BladeFormatter",
-                        "menu": [
-                            {
-                                "caption": "Settings",
-                                "command": "edit_settings",
-                                "args": {
-                                    "base_file": "${packages}/BladeFormatter/BladeFormatter.sublime-settings",
-                                    "default": "{\n\t$0\n}\n"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+	{
+		"id": "preferences",
+		"children":
+		[
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children":
+				[
+					{
+						"caption": "BladeFormatter",
+						"children":
+						[
+							{
+								"caption": "Settings",
+								"command": "edit_settings",
+								"args":
+								{
+									"base_file": "${packages}/BladeFormatter/BladeFormatter.sublime-settings",
+									"default": "{\n\t$0\n}\n"
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	}
 ]
